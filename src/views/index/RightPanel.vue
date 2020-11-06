@@ -11,6 +11,21 @@
       <el-scrollbar class="right-scrollbar">
         <!-- 组件属性 -->
         <el-form v-show="currentTab==='field' && showField" size="small" label-width="90px">
+
+          <el-form-item v-if="activeData.__config__.raduis!==undefined" label="圆的半径">
+            <el-input v-model="activeData.__config__.raduis" placeholder="请输入圆的半径" />
+          </el-form-item>
+          <el-form-item v-if="activeData.__config__.color!==undefined" label="文字颜色">
+            <el-input v-model="activeData.__config__.color" placeholder="请输入文字颜色" />
+          </el-form-item>
+          <el-form-item v-if="activeData.__config__.width!==undefined" label="宽">
+            <el-input v-model="activeData.__config__.width" placeholder="请输入宽" />
+          </el-form-item>
+          <el-form-item v-if="activeData.__config__.height!==undefined" label="高">
+            <el-input v-model="activeData.__config__.height" placeholder="请输入高" />
+          </el-form-item>
+
+
           <el-form-item v-if="activeData.__config__.changeTag" label="组件类型">
             <el-select
               v-model="activeData.__config__.tagIcon"

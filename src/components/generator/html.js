@@ -79,6 +79,14 @@ function colWrapper(scheme, str) {
 }
 
 const layouts = {
+  otherNode(scheme) {
+    const config = scheme.__config__
+    const tagDom = tags[config.tag] ? tags[config.tag](scheme) : null
+    const str = `
+       ${tagDom}
+    `
+    return str
+  },
   colFormItem(scheme) {
     const config = scheme.__config__
     let labelWidth = ''
@@ -114,6 +122,12 @@ const layouts = {
 }
 
 const tags = {
+  circle: el => {
+    const {
+      tag, color, text, raduis, width, height
+    } = el.__config__
+    return `<div style="text-align:center; width: ${width}px;height: ${height}px;color: ${color};border: 1px solid #000;border-radius: ${raduis}px">${text}</div>`
+  },
   'el-button': el => {
     const {
       tag, disabled

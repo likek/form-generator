@@ -20,6 +20,19 @@ const components = {
   }
 }
 const layouts = {
+  otherNode(h, currentItem, index, list) {
+    const { activeItem } = this.$listeners
+    const config = currentItem.__config__
+    const {
+      tag, color, text, raduis, width, height
+    } = config
+    const style = `text-align:center; width: ${width}px;height: ${height}px;color: ${color};border: 1px solid #000;border-radius: ${raduis}px`
+    return (
+      <el-col nativeOnClick={event => {activeItem(currentItem); event.stopPropagation()}}>
+         <div style={style}>{text}</div>
+      </el-col>
+    )
+  },
   colFormItem(h, currentItem, index, list) {
     const { activeItem } = this.$listeners
     const config = currentItem.__config__

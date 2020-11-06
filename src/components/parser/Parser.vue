@@ -15,6 +15,14 @@ const ruleTrigger = {
 }
 
 const layouts = {
+  otherNode(scheme) {
+    const config = scheme.__config__
+    const tagDom = tags[config.tag] ? tags[config.tag](scheme) : null
+    const str = `
+       ${tagDom}
+    `
+    return str
+  },
   colFormItem(h, scheme) {
     const config = scheme.__config__
     const listeners = buildListeners.call(this, scheme)

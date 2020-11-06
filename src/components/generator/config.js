@@ -626,5 +626,19 @@ export const layoutComponents = [
     type: 'default',
     justify: 'start',
     align: 'top'
+  },
+  {
+    __config__: {
+      tagIcon: 'button', // 必须
+      label: '圆',
+      tag: 'circle',
+      layout: 'otherNode',
+
+      text: '11',
+      color: '#f00',
+      raduis: 80,
+      width: 160,
+      height: 160
+    }
   }
 ]
