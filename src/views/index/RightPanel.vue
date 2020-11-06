@@ -589,6 +589,9 @@
         </el-form>
         <!-- 表单属性 -->
         <el-form v-show="currentTab === 'form'" size="small" label-width="90px">
+          <el-form-item label="inline">
+            <el-switch v-model="formConf.inline" />
+          </el-form-item>
           <el-form-item label="表单名">
             <el-input v-model="formConf.formRef" placeholder="请输入表单名（ref）" />
           </el-form-item>
