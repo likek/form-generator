@@ -30,6 +30,7 @@ const layouts = {
     return (
       <el-col nativeOnClick={event => {activeItem(currentItem); event.stopPropagation()}}>
          <div style={style}>{text}</div>
+        {components.itemBtns.apply(this, arguments)}
       </el-col>
     )
   },
